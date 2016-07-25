@@ -8,6 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.6.2/remarkable.min.js"></script>
   </head>
   <body>
     <div id="content"></div>
@@ -41,13 +42,20 @@
 
       // tutorial4.js
       var Comment = React.createClass({
+        rawMarkup: function() {
+          var md = new Remarkable();
+          var rawMarkup = md.render(this.props.children.toString());
+          return { __html: rawMarkup };
+        },
+
         render: function() {
+          var md = new Remarkable();
           return (
             <div className="comment">
               <h2 className="commentAuthor">
                 {this.props.author}
               </h2>
-              {this.props.children}
+              <span dangerouslySetInnerHTML={this.rawMarkup()} />
             </div>
           );
         }

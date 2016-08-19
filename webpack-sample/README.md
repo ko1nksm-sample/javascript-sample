@@ -54,3 +54,28 @@ npm install webpack-dev-server --save-dev
 http://localhost:8080/
 http://localhost:8080/webpack-dev-server/ # live reload
 ```
+
+## babel-loaderの追加
+
+
+### npmモジュールの追加
+```
+npm install babel-loader babel-core babel-preset-es2016 --save-dev
+```
+
+
+### webpack.config.jsの修正
+
+以下の追加
+
+```
+module: {
+  loaders: [
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader'
+    }
+  ]
+}
+```

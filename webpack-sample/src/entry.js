@@ -1,5 +1,8 @@
-require("./style.scss");
-document.write(require("./content.js"));
+import hello from 'hello'
+import 'style.scss';
 
-var ok = () => document.write('<p>ok</p>');
-ok();
+let func = () => {
+  document.write('<p>' + hello() + '</p>');
+}
+
+func();

@@ -91,3 +91,17 @@ jasmineの設定ファイル生成
 ```
 $(npm bin)/jasmine init
 ```
+
+### ESlint
+
+```
+npm install --save-dev eslint
+```
+
+```
+$(npm bin)/eslint --init
+```
+
+```
+$(npm bin)/eslint app/assets/javascripts
+```

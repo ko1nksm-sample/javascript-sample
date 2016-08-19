@@ -1,8 +1,8 @@
 import hello from 'hello'
-import 'style.scss';
+import 'style.scss'
 
 let func = () => {
-  document.write('<p>' + hello() + '</p>');
+  document.write('<p>' + hello() + '</p>')
 }
 
-func();
+func()

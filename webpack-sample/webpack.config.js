@@ -1,8 +1,15 @@
+var path = require("path");
+
 module.exports = {
-    entry: "./entry.js",
+    entry: "./src/entry.js",
     output: {
-        path: __dirname,
+        path: path.resolve(__dirname, "dist"),
+        publicPath: '/assets',
         filename: "bundle.js"
+    },
+    devServer: {
+      contentBase: 'public',
+      port: 3000
     },
     module: {
         loaders: [

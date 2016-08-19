@@ -4,6 +4,7 @@
     "eslint": "eslint app/assets/javascripts",
     "test": "babel-node $(npm bin)/jasmine",
     "test-cov": "babel-node $(npm bin)/isparta cover --report text --report html node_modules/jasmine/bin/jasmine.js",
+    "metrics": "plato -r -d report src",
     "start": "webpack-dev-server"
   },
   "devDependencies": {
@@ -20,6 +21,7 @@
     "isparta": "^4.0.0",
     "jasmine": "^2.4.1",
     "node-sass": "^3.8.0",
+    "plato": "^1.7.0",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",

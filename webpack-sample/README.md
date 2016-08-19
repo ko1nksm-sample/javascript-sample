@@ -79,3 +79,15 @@ module: {
   ]
 }
 ```
+
+### テスト＋カバレッジ
+
+```
+npm install babel-cli jasmine isparta --save-dev
+```
+
+jasmineの設定ファイル生成
+
+```
+$(npm bin)/jasmine init
+```

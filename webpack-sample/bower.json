@@ -1,0 +1,17 @@
+{
+  "name": "webpack-sample",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/ko1nksm/javascript-sample",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^3.1.0"
+  }
+}

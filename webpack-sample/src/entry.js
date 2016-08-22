@@ -1,4 +1,5 @@
 import hello from 'hello'
+import $ from 'jquery'
 import 'style.scss'
 
 let func = () => {
@@ -6,3 +7,5 @@ let func = () => {
 }
 
 func()
+
+document.write('<p>jQuery: ' + $.fn.jquery + '</p>')

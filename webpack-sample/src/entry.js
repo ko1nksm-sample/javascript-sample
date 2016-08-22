@@ -1,8 +1,8 @@
-import hello from 'hello'
+import hello from './hello'
 import $ from 'jquery'
 import _ from 'lodash'
-import moment from 'moment'
-import 'style.scss'
+var moment = require('moment')
+import './style.scss'
 
 let func = () => {
   document.write('<p>' + hello() + '</p>')

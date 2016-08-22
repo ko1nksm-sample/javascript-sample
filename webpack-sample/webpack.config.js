@@ -10,6 +10,11 @@ module.exports = {
       new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
     )
   ],
+  externals: {
+    "jquery": "$",
+    "lodash": "_",
+    "moment": "moment",
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
     publicPath: '/assets',

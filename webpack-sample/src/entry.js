@@ -1,5 +1,7 @@
 import hello from 'hello'
 import $ from 'jquery'
+import _ from 'lodash'
+import moment from 'moment'
 import 'style.scss'
 
 let func = () => {
@@ -9,3 +11,6 @@ let func = () => {
 func()
 
 document.write('<p>jQuery: ' + $.fn.jquery + '</p>')
+document.write('<p>lodash: ' + _.VERSION + '</p>')
+document.write('<p>momen:' + moment.version + '</p>')
+

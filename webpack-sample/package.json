@@ -27,8 +27,8 @@
   "scripts": {
     "build": "webpack",
     "eslint": "DEBUG=eslint:cli-engine eslint src ||:",
-    "test": "NODE_PATH=src mocha --opts ./mocha.opts ||:",
-    "test-cov": "NODE_PATH=src isparta cover mocha -- --opts ./mocha.opts",
+    "test": "mocha --opts ./mocha.opts ||:",
+    "test-cov": "isparta cover mocha -- --opts ./mocha.opts",
     "metrics": "plato -r -d report src",
     "start": "webpack-dev-server"
   }

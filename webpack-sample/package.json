@@ -1,7 +1,7 @@
 {
   "scripts": {
     "build": "webpack",
-    "eslint": "eslint app/assets/javascripts",
+    "eslint": "eslint src ||:",
     "test": "NODE_PATH=./src babel-node $(npm bin)/jasmine",
     "test-cov": "NODE_PATH=./src babel-node $(npm bin)/isparta cover node_modules/jasmine/bin/jasmine.js",
     "metrics": "plato -r -d report src",

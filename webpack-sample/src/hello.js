@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 export default function hello () {
-  return 'hello'
+  return _.escape('hello')
 }

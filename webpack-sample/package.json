@@ -1,14 +1,5 @@
 {
-  "scripts": {
-    "build": "webpack",
-    "eslint": "DEBUG=eslint:cli-engine eslint src ||:",
-    "test": "mocha --opts ./mocha.opts ||:",
-    "test-cov": "isparta cover mocha -- --opts ./mocha.opts",
-    "metrics": "plato -r -d report src",
-    "start": "webpack-dev-server"
-  },
   "devDependencies": {
-    "babel-cli": "^6.11.4",
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.5",
     "babel-plugin-module-resolver": "^2.1.1",
@@ -32,5 +23,13 @@
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.14.1"
+  },
+  "scripts": {
+    "build": "webpack",
+    "eslint": "DEBUG=eslint:cli-engine eslint src ||:",
+    "test": "NODE_PATH=src mocha --opts ./mocha.opts ||:",
+    "test-cov": "NODE_PATH=src isparta cover mocha -- --opts ./mocha.opts",
+    "metrics": "plato -r -d report src",
+    "start": "webpack-dev-server"
   }
 }

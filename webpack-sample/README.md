@@ -1,6 +1,18 @@
 # webpackベースのフロントエンド開発環境
 
 
+構成
+
+* ビルド: webpack
+* テスト用ウェブサーバー: webpack-dev-server
+* コンパイラ: babel
+* スタイルシート: scss（node-sass = libsass）
+* パッケージ管理: npm、bower（オプション）
+* テスト: mocha + power-assert
+* 構文チェック: eslint
+* カバレッジ: ispara（istanbulのes6拡張）
+* メトリクス: plato
+
 ## 最小限のwebpack構成
 
 ### package.json作成

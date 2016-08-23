@@ -1,8 +1,6 @@
 {
   "presets": ["es2015"],
   "plugins": [
-    ["module-alias", [
-      { "src": "./src/lib", "expose": "lib" }
-    ]]
+    ["module-resolver", {"root": ["./src"]}]
   ]
 }

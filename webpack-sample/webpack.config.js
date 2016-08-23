@@ -3,6 +3,7 @@ var webpack = require("webpack");
 module.exports = {
   entry: "./src/entry.js",
   resolve: {
+    root: path.resolve('src'),
     modulesDirectories: ["web_modules", "node_modules", "bower_components"]
   },
   plugins: [

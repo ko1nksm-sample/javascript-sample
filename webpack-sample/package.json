@@ -2,8 +2,8 @@
   "scripts": {
     "build": "webpack",
     "eslint": "DEBUG=eslint:cli-engine eslint src ||:",
-    "test": "babel-node $(npm bin)/jasmine",
-    "test-cov": "babel-node $(npm bin)/isparta cover node_modules/jasmine/bin/jasmine.js",
+    "test": "babel-node $(npm bin)/jasmine ||:",
+    "test-cov": "babel-node $(npm bin)/isparta cover node_modules/jasmine/bin/jasmine.js ||:",
     "metrics": "plato -r -d report src",
     "start": "webpack-dev-server"
   },

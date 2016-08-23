@@ -2,8 +2,8 @@
   "scripts": {
     "build": "webpack",
     "eslint": "eslint src ||:",
-    "test": "NODE_PATH=./src babel-node $(npm bin)/jasmine",
-    "test-cov": "NODE_PATH=./src babel-node $(npm bin)/isparta cover node_modules/jasmine/bin/jasmine.js",
+    "test": "babel-node $(npm bin)/jasmine",
+    "test-cov": "babel-node $(npm bin)/isparta cover node_modules/jasmine/bin/jasmine.js",
     "metrics": "plato -r -d report src",
     "start": "webpack-dev-server"
   },
@@ -11,6 +11,7 @@
     "babel-cli": "^6.11.4",
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.5",
+    "babel-plugin-module-alias": "^1.6.0",
     "babel-preset-es2015": "^6.13.2",
     "bower": "^1.7.9",
     "css-loader": "^0.23.1",

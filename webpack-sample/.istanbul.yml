@@ -4,4 +4,4 @@ instrumentation:
 reporting:
   reports:
     - text
-    - html 
+    - html

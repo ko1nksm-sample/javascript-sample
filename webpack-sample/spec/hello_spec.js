@@ -1,3 +1,4 @@
+import assert from 'power-assert'
 import hello from 'lib/hello'
 
 function add(a, b) {
@@ -6,13 +7,13 @@ function add(a, b) {
 
 describe('add 関数のテスト', function() {
     it('hello', function() {
-        expect(hello()).toBe("hello");
+        assert(hello() == "hello");
     });
 
     it('1 + 1 は 2', function() {
-        expect(add(1, 1)).toBe(2);
+        assert(add(1, 1) == 2);
     });
     it('1 + 4 は 5', function() {
-        expect(add(1, 4)).toBe(5);
+        assert(add(1, 4) == 5);
     });
 });

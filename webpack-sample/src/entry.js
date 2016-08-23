@@ -1,4 +1,4 @@
-import hello from './hello'
+import hello from 'lib/hello'
 import $ from 'jquery'
 import _ from 'lodash'
 var moment = require('moment')

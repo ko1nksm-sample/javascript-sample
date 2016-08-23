@@ -1,0 +1,7 @@
+instrumentation:
+  root: ./src
+  include-all-sources: true
+reporting:
+  reports:
+    - text
+    - html 

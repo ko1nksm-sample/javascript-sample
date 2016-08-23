@@ -1,4 +1,4 @@
-import hello from '../src/hello'
+import hello from 'lib/hello'
 
 function add(a, b) {
       return a + b;

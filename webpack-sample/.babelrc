@@ -2,6 +2,7 @@
   "presets": ["es2015"],
   "plugins": [
     ["module-resolver", {"root": ["./src"]}],
-    "resolve-bower-module"
+    "resolve-bower-module",
+    "babel-plugin-espower"
   ]
 }

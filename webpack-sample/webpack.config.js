@@ -13,11 +13,14 @@ module.exports = {
   ],
   externals: [
     function(context, request, callback) {
-      console.log(context + ' : ' + request);
+      // console.log(context + ' : ' + request);
+      if (request.includes('/jquery/')) {
+        return callback(null, "$")
+      }
       callback();
     },
     {
-      "jquery": "$",
+      //"jquery": "$",
       "lodash": "_",
       "moment": "moment",
     }
@@ -41,6 +44,10 @@ module.exports = {
       {
         test: /\.css$/,
         loaders: ['style', 'css']
+      },
+      {
+        test: /\.json$/,
+        loader: 'json'
       },
       {
         test: /\.scss$/,

@@ -13,11 +13,10 @@ nodeモジュールをメインで使用するが、bowerモジュールを使�
 * スタイルシート: scss（node-sass = libsass）
 * パッケージ管理: npm、bower ※オプション
 * テスト: mocha + power-assert
+* ブラウザテスト: karma
 * 構文チェック: eslint
 * カバレッジ: ispara（istanbulのes6拡張）
 * メトリクス: plato
-
-TODO: karma対応を入れる
 
 ## テスト用URL
 

@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# 動作確認のために全てを実行するだけのスクリプト
+
 npm run build
 npm run eslint
 npm run test

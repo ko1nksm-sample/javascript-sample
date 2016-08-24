@@ -1,13 +1,15 @@
 {
-  "presets": ["es2015"],
+  "presets": [
+    "es2015",
+
+    // power-assert用変換
+    "babel-preset-power-assert",
+  ],
   "plugins": [
     // nodeで実行したときにパスを解決するために必要
     ["module-resolver", {"root": ["./src"]}],
 
     // bowerを使用するときに必要
     "resolve-bower-module",
-
-    // power-assert用プラグイン
-    "babel-plugin-espower",
   ]
 }

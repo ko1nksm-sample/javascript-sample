@@ -1,8 +1,13 @@
 {
   "presets": ["es2015"],
   "plugins": [
+    // nodeで実行したときにパスを解決するために必要
     ["module-resolver", {"root": ["./src"]}],
+
+    // bowerを使用するときに必要
     "resolve-bower-module",
-    "babel-plugin-espower"
+
+    // power-assert用プラグイン
+    "babel-plugin-espower",
   ]
 }

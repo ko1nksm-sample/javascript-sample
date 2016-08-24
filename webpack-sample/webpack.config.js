@@ -4,9 +4,11 @@ module.exports = {
   entry: "./src/entry.js",
   resolve: {
     root: path.resolve('src'),
-    modulesDirectories: ["web_modules", "node_modules", "bower_components"]
+    // bower_componentsはbowerを使用する時のみ必要
+    modulesDirectories: ["node_modules", "bower_components"]
   },
   plugins: [
+    // bowerを使用する時のみ必要
     new webpack.ResolverPlugin(
       new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
     )
@@ -33,6 +35,13 @@ module.exports = {
     ]
   },
   externals: [
+    {
+      "lodash": "_",
+      "moment": "moment",
+    },
+    // bowerモジュールをexternalsする場合
+    // babel-plugin-resolve-bower-module (refer to .babelrc) によって
+    // 読み込みパスが変更されるために関数で処理する必要がある。
     function(context, request, callback) {
       // console.log(context + ' : ' + request);
       if (request.startsWith(path.resolve('bower_components/jquery/'))) {
@@ -40,11 +49,6 @@ module.exports = {
       }
       callback();
     },
-    {
-      //"jquery": "$",
-      "lodash": "_",
-      "moment": "moment",
-    }
   ],
   devtool: 'source-map',
   output: {
@@ -55,5 +59,5 @@ module.exports = {
   devServer: {
     contentBase: 'public',
     port: 3000
-  }
+  },
 };

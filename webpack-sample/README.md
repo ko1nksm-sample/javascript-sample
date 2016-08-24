@@ -1,7 +1,7 @@
 # webpackベースのフロントエンド開発環境
 
 
-構成
+## 構成
 
 * ビルド: webpack
 * テスト用ウェブサーバー: webpack-dev-server
@@ -13,59 +13,119 @@
 * カバレッジ: ispara（istanbulのes6拡張）
 * メトリクス: plato
 
-## 最小限のwebpack構成
+## テスト用URL
 
-### package.json作成
+* http://localhost:8080/
+* http://localhost:8080/webpack-dev-server/ # live reload
 
-参考 http://webpack.github.io/docs/tutorials/getting-started/
+
+## 流れ
+
+### webpack
+
+1. webpack実行
+2. babel-loaderでbabel呼び出し
+  * babel-plugin-module-resolverでsrcパス解決
+  * babel-plugin-resolve-bower-module でbowerモジュール解決
+4. webpackにてモジュール解決
+
+### テスト、カバレッジ
+
+1. ispara実行（カバレッジの場合）
+2. mocha実行
+3. js:babel-core/registerにてbabel呼び出し
+  * babel-plugin-module-resolverでsrcパス解決
+  * babel-plugin-resolve-bower-module でbowerモジュール解決
+
+### eslint
+
+1. eslint呼び出し
+2. eslint-import-resolver-webpackでモジュール解決
+
+## npmモジュールインストール
 
 ```
+# 初期化
 npm init
+
 npm install webpack --save-dev
-```
+npm install webpack-dev-server --save-dev
 
-### css-loader, style-loaderの追加
-
-```
+# オプション webpackでcssを読み込む場合に必要
 npm install css-loader style-loader --save-dev
 
+# babel関連
+npm install babel-loader babel-core babel-preset-es2016 --save-dev
 ```
 
-### webpack.config.jsの作成
+
+### webpack.config.js作成
 
 ```
+var path = require("path");
 module.exports = {
-    entry: "./entry.js",
-    output: {
-        path: __dirname,
-        filename: "bundle.js"
-    },
-    module: {
-        loaders: [
-            { test: /\.css$/, loader: "style!css" }
-        ]
-    }
+  entry: "./src/entry.js",
+  resolve: {
+    root: path.resolve('src'),
+    modulesDirectories: ["web_modules", "node_modules"]
+  },
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    publicPath: '/assets',
+    filename: "bundle.js"
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.css$/,
+        loaders: ['style', 'css']
+      },
+      {
+        test: /\.scss$/,
+        loaders: ["style", "css?sourceMap", "sass?sourceMap"]
+      }
+    ]
+  },
+  devtool: 'source-map'
 };
 ```
 
 
-### webpackの実行
 
 ```
-$(npm bin)/webpack
 ```
 
-### webpack-dev-serverの実行
+### webpack.config.js修正
 
 ```
-npm install webpack-dev-server --save-dev
-
+var path = require("path");
+module.exports = {
+  entry: "./src/entry.js",
+  resolve: {
+    root: path.resolve('src'),
+    modulesDirectories: ["web_modules", "node_modules"]
+  },
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    publicPath: '/assets',
+    filename: "bundle.js"
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.css$/,
+        loaders: ['style', 'css']
+      },
+      {
+        test: /\.scss$/,
+        loaders: ["style", "css?sourceMap", "sass?sourceMap"]
+      }
+    ]
+  },
+  devtool: 'source-map'
+};
 ```
 
-```
-http://localhost:8080/
-http://localhost:8080/webpack-dev-server/ # live reload
-```
 
 ## babel-loaderの追加
 

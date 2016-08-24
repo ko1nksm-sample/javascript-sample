@@ -1,3 +1,5 @@
+// サンプルとしてjQueryの関連のテスト（？）もここに書いているが、
+// ブラウザに関する機能はkarma経由でテストした方が良さそう
 import assert from 'power-assert'
 
 describe('formsのテスト', function() {

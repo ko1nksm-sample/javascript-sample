@@ -1,5 +1,7 @@
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path')
+const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+
 module.exports = {
   entry: {
     bundle: './src/entry.js',
@@ -14,14 +16,33 @@ module.exports = {
     // bowerを使用する時のみ必要
     new webpack.ResolverPlugin(
       new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('bower.json', ['main'])
-    )
+    ),
+    new ExtractTextPlugin("[name].css"),
+    new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
+      compress: {
+        warnings: false,
+      },
+    }),
   ],
   module: {
     loaders: [
-      { test: /\.jsx?$/, loaders: ['babel'] },
-      { test: /\.css$/, loaders: ['style', 'css?sourceMap'] },
-      { test: /\.scss$/, loaders: ['style', 'css?sourceMap', 'sass?sourceMap'] },
-      { test: /\.json$/, loaders: ['json'] }
+      {
+        test: /\.jsx?$/,
+        loader: 'babel',
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style', ['css?sourceMap'])
+      },
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract('style', ['css?sourceMap', 'sass?sourceMap'])
+      },
+      {
+        test: /\.json$/,
+        loader: 'json'
+      }
     ]
   },
   externals: [

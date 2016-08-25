@@ -6,16 +6,15 @@ import $ from 'jquery'
 import _ from 'lodash'
 import moment from 'moment'
 
-let func = () => {
-  document.write('<p>' + hello() + ' <span id="name"></span></p>')
+let disp = () => {
+  document.write(`<p>${hello()} <span id="name"></span></p>`)
 }
-
-func()
+disp()
 
 world()
 
-document.write('<p>jQuery: ' + $.fn.jquery + '</p>')
-document.write('<p>lodash: ' + _.VERSION + '</p>')
-document.write('<p>momen:' + moment.version + '</p>')
+document.write(`<p>jQuery: ${$.fn.jquery}</p>`)
+document.write(`<p>lodash: ${_.VERSION}</p>`)
+document.write(`<p>momen: ${moment.version}</p>`)
 
 init()

@@ -5,7 +5,6 @@ import world from 'lib/world.jsx'
 import $ from 'jquery'
 import _ from 'lodash'
 import moment from 'moment'
-import './style.scss'
 
 let func = () => {
   document.write('<p>' + hello() + ' <span id="name"></span></p>')

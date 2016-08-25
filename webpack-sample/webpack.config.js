@@ -1,7 +1,10 @@
 var path = require('path')
 var webpack = require('webpack')
 module.exports = {
-  entry: './src/entry.js',
+  entry: {
+    bundle: './src/entry.js',
+    style: './src/style.js'
+  },
   resolve: {
     root: path.resolve(__dirname, './src'),
     // bower_componentsはbowerを使用する時のみ必要
@@ -43,10 +46,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/assets',
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   devServer: {
     contentBase: 'public',
-    port: 3000
   }
 }

@@ -1,4 +1,4 @@
-# npm + webpack + babel で作るフロントエンド開発環境（2016年版）
+# npm + webpack + babel で作るフロントエンド開発環境（2016年8月版）
 
 npm + webpack + babel をベースとして開発に必要なものを揃えています。
 

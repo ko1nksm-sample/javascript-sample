@@ -1,35 +1,33 @@
-# webpackベースのフロントエンド開発環境
+# npm + webpack + babel で作るフロントエンド開発環境
 
 コンセプト
 
-webpackをベースとしてテストなどを含めて開発に必要なものを揃える。
-nodeモジュールをメインで使用するが、bowerモジュールを使うこともできる。
+npm + webpack + babel をベースとして開発に必要なものを揃える。
 
 ## 構成
 
-* ビルド: webpack
-* テスト用ウェブサーバー: webpack-dev-server
-* コンパイラ: babel
-* スタイルシート: scss（node-sass = libsass）
-* パッケージ管理: npm、bower ※オプション
-* テスト: mocha + power-assert
-* ブラウザテスト: karma
-* 構文チェック: eslint
-* カバレッジ: nyc（istanbulのCLI）
-* メトリクス: plato
+| タスクランナー         | npm                                       |
+| ビルド                 | webpack                                   |
+| 開発用ウェブサーバー   | webpack-dev-server                        |
+| トランスラパイラ       | babel                                     |
+| パッケージ管理         | npm、bower(オプション)                    |
+| テスト                 | mocha, nyc(カバレッジ)                    |
+| ブラウザテスト         | karma + mocha, karma-coverage(カバレッジ) |
+| アサーションライブラリ | power-assert                              |
+| 構文チェック           | eslint                                    |
+| メトリクス計測         | plato                                     |
 
-## 既知の問題
 
-カバレッジで参照していないファイルが表示されない
+## 開発用URL
 
-* https://github.com/istanbuljs/babel-plugin-istanbul/issues/4
-* https://github.com/istanbuljs/nyc/issues/333
-
-## テスト用URL
+webpack-dev-server
 
 * http://localhost:8080/
-* http://localhost:8080/webpack-dev-server/ # live reload
+* http://localhost:8080/webpack-dev-server/ (live reload)
 
+karma
+
+* http://localhost:9877/
 
 ## 依存関係
 
@@ -41,7 +39,6 @@ nodeモジュールをメインで使用するが、bowerモジュールを使�
   * bowerモジュールの結合処理 (webpack.ResolverPlugin) ※オプション
 2. babel実行 [設定ファイル: .babelrc]
   * ES6変換 (babel-preset-es2015)
-  * power-assert変換 (babel-preset-power-assert)
   * プロジェクトパス解決 (babel-plugin-module-resolver)
   * bowerモジュールのパス解決 (babel-plugin-resolve-bower-module) ※オプション
 
@@ -54,6 +51,11 @@ nodeモジュールをメインで使用するが、bowerモジュールを使�
   * babel実行 (--compilers js:babel-core/register)
   * instrument追加 (babel-plugin-istanbul)
 3. babel実行（ビルドの2と同様）
+  * ES6変換 (babel-preset-es2015)
+  * power-assert変換 (babel-preset-power-assert)
+  * instrumentコード埋め込み (babel-plugin-istanbul)
+
+### ブラウザテスト、カバレッジ (karma + mocha, karma-coverage)
 
 ### 構文チェック (eslint)
 
@@ -64,3 +66,12 @@ nodeモジュールをメインで使用するが、bowerモジュールを使�
 ### メトリクス (plato)
 
 1. plato実行 (依存するものなし)
+
+
+## 既知の問題
+
+カバレッジで参照していないファイルが表示されない
+
+* https://github.com/istanbuljs/babel-plugin-istanbul/issues/4
+* https://github.com/istanbuljs/nyc/issues/333
+

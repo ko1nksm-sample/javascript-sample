@@ -57,6 +57,11 @@ karma
 
 ### ブラウザテスト、カバレッジ (karma + mocha, karma-coverage)
 
+1. karma実行 [設定ファイル: karma.conf.js]
+  * webpack実行 (karma-webpack)
+  * mocha実行 (karma-mocha)
+  * カバレッッジ実行 (karma-coverage)
+
 ### 構文チェック (eslint)
 
 1. eslint実行 [設定ファイル: .eslintrc.js]

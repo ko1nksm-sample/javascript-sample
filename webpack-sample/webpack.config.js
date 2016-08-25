@@ -15,7 +15,7 @@ module.exports = {
   ],
   module: {
     loaders: [
-      { test: /\.js$/, loaders: ['babel'] },
+      { test: /\.jsx?$/, loaders: ['babel'] },
       { test: /\.css$/, loaders: ['style', 'css?sourceMap'] },
       { test: /\.scss$/, loaders: ['style', 'css?sourceMap', 'sass?sourceMap'] },
       { test: /\.json$/, loaders: ['json'] }
@@ -23,6 +23,8 @@ module.exports = {
   },
   externals: [
     {
+      'react': 'React',
+      'react-dom': 'ReactDOM',
       'lodash': '_',
       'moment': 'moment'
     },

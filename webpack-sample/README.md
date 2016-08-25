@@ -15,8 +15,15 @@ nodeモジュールをメインで使用するが、bowerモジュールを使�
 * テスト: mocha + power-assert
 * ブラウザテスト: karma
 * 構文チェック: eslint
-* カバレッジ: ispara（istanbulのes6拡張）
+* カバレッジ: nyc（istanbulのCLI）
 * メトリクス: plato
+
+## 既知の問題
+
+カバレッジで参照していないファイルが表示されない
+
+* https://github.com/istanbuljs/babel-plugin-istanbul/issues/4
+* https://github.com/istanbuljs/nyc/issues/333
 
 ## テスト用URL
 
@@ -38,11 +45,11 @@ nodeモジュールをメインで使用するが、bowerモジュールを使�
   * プロジェクトパス解決 (babel-plugin-module-resolver)
   * bowerモジュールのパス解決 (babel-plugin-resolve-bower-module) ※オプション
 
-### テスト、カバレッジ (mocha, ispara)
+### テスト、カバレッジ (mocha, nyc)
 
 テストの場合は1を飛ばして「2. mocha実行」から開始
 
-1. ispara実行 [設定ファイル: .istanbul.yml]
+1. nyc実行 [設定ファイル: .istanbul.yml]
 2. mocha実行 [設定ファイル: mocha.opts]
   * babel実行 (--compilers js:babel-core/register)
 3. babel実行（ビルドの2と同様）

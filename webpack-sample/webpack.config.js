@@ -15,23 +15,10 @@ module.exports = {
   ],
   module: {
     loaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      },
-      {
-        test: /\.css$/,
-        loaders: ['style', 'css']
-      },
-      {
-        test: /\.scss$/,
-        loaders: ["style", "css?sourceMap", "sass?sourceMap"]
-      },
-      {
-        test: /\.json$/,
-        loader: 'json'
-      },
+      { test: /\.js$/,   loaders: ['babel'] },
+      { test: /\.css$/,  loaders: ['style', 'css?sourceMap'] },
+      { test: /\.scss$/, loaders: ["style", "css?sourceMap", "sass?sourceMap"] },
+      { test: /\.json$/, loaders: ['json'] },
     ]
   },
   externals: [

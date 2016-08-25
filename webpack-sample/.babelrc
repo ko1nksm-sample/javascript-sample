@@ -11,5 +11,19 @@
 
     // bowerを使用するときに必要
     "resolve-bower-module",
-  ]
+  ],
+
+  "compact": false,
+
+  "ignore": [ "node_modules", "bower_components" ],
+
+  "env": {
+    "test": {
+      "plugins": [
+        ["istanbul", {
+          "exclude": [ "spec/**/*.js" ]
+        }]
+      ]
+    }
+  }
 }

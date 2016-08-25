@@ -4,4 +4,4 @@
 /coverage
 /report
 /bower_components
-
+/.nyc_output

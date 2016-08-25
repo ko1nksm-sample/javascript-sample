@@ -33,6 +33,7 @@
     "phantomjs-prebuilt": "^2.1.12",
     "plato": "^1.7.0",
     "power-assert": "^1.4.1",
+    "rimraf": "^2.5.4",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
@@ -46,7 +47,7 @@
     "metrics": "plato -r -d report src",
     "start": "webpack-dev-server",
     "karma": "cross-env NODE_ENV=test karma start",
-    "clean": "rm -rf dist coverage report"
+    "clean": "rimraf .nyc_output dist coverage report"
   },
   "nyc": {
     "sourceMap": false,

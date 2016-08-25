@@ -71,6 +71,7 @@ module.exports = {
   },
   devServer: {
     contentBase: 'public',
-    inline: true
+    //inline: true,
+    //https: true
   }
 }

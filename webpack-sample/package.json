@@ -42,17 +42,17 @@
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
-    "build": "webpack",
-    "lint": "DEBUG=eslint:cli-engine eslint src",
+    "postinstall": "bower install",
+    "build": "cross-env NODE_ENV=production webpack",
+    "start": "cross-env NODE_ENV=debug webpack-dev-server",
     "test": "cross-env NODE_ENV=test mocha --opts ./mocha.opts",
     "test-cov": "cross-env NODE_ENV=test nyc mocha --opts ./mocha.opts",
-    "metrics": "plato -r -d report src",
-    "start": "webpack-dev-server",
     "karma": "cross-env NODE_ENV=test karma start",
+    "lint": "DEBUG=eslint:cli-engine eslint src",
+    "metrics": "plato -r -d report src",
     "clean": "rimraf .nyc_output dist coverage report",
     "cleanall": "rimraf node_modules bower_components",
-    "precleanall": "npm run clean",
-    "postinstall": "bower install"
+    "precleanall": "npm run clean"
   },
   "nyc": {
     "sourceMap": false,

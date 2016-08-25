@@ -42,7 +42,9 @@
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
+    "コメント": "npm install時に自動的にbower installを実行するため。bowerを使わないならば不要",
     "postinstall": "bower install",
+
     "build": "cross-env NODE_ENV=production webpack",
     "start": "cross-env NODE_ENV=debug webpack-dev-server",
     "test": "cross-env NODE_ENV=test mocha --opts ./mocha.opts",

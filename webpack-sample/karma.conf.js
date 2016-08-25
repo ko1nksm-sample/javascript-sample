@@ -31,6 +31,7 @@ module.exports = function (config) {
     },
 
     webpack: (function () {
+      // テスト実行環境構築を楽にするために全ての依存モジュールを結合している
       var conf = require('./webpack.config.js')
       delete conf.externals
       return conf

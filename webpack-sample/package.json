@@ -20,7 +20,10 @@
     "jsdom": "^9.4.2",
     "json-loader": "^0.5.4",
     "karma": "^1.2.0",
+    "karma-coverage": "^1.1.1",
+    "karma-mocha": "^1.1.1",
     "karma-phantomjs-launcher": "^1.0.1",
+    "karma-webpack": "^1.8.0",
     "lodash": "^4.15.0",
     "mocha": "^3.0.2",
     "mocha-jsdom": "^1.1.0",
@@ -42,12 +45,16 @@
     "test-cov": "cross-env NODE_ENV=test nyc mocha --opts ./mocha.opts",
     "metrics": "plato -r -d report src",
     "start": "webpack-dev-server",
-    "karma": "karma start",
+    "karma": "cross-env NODE_ENV=test karma start",
     "clean": "rm -rf dist coverage report"
   },
   "nyc": {
     "sourceMap": false,
     "instrument": false,
-    "reporter": [ "lcov", "text", "html" ]
+    "reporter": [
+      "lcov",
+      "text",
+      "html"
+    ]
   }
 }

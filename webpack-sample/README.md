@@ -81,7 +81,7 @@ babelプラグインでpower-assertとカバレッジ用のコード変換も行
 
 webpack-dev-server
 
-* http://localhost:8080/ (inline mode)
+* http://localhost:8080/
 * http://localhost:8080/webpack-dev-server/ (iframe mode)
 
 karma

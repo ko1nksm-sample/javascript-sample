@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -13,16 +14,26 @@ module.exports = {
     modulesDirectories: ['node_modules', 'bower_components']
   },
   plugins: [
-    // bowerを使用する時のみ必要
+    // bowerパッケージのパス解決（bowerを使わない場合は不要）
     new webpack.ResolverPlugin(
       new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('bower.json', ['main'])
     ),
+
+    // css-loader, sass-loaderで処理したCSSを単体のファイルとして生成するために必要
     new ExtractTextPlugin("[name].css"),
+
+    // externalsにしたファイルを手動でコピーする（CDN等を使う場合は不要）
+    new CopyWebpackPlugin([
+      { from: 'bower_components/jquery/dist/jquery.min.js' },
+      { from: 'node_modules/lodash/lodash.min.js' },
+      { from: 'node_modules/moment/min/moment.min.js' },
+      { from: 'node_modules/react/dist/react.min.js' },
+      { from: 'node_modules/react-dom/dist/react-dom.min.js' },
+    ]),
+
+    // minify
     new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-      compress: {
-        warnings: false,
-      },
+      minimize: true, compress: { warnings: false }
     }),
   ],
   module: {

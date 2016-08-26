@@ -18,6 +18,8 @@ npm + webpack + babel をベースとして開発に必要なものを揃えて�
 | 構文チェック           | eslint                                    |
 | メトリクス計測         | plato                                     |
 
+サンプルとしてReactも組み込んでいます。
+
 おまけ MacOSX上のatomでlinter-eslintプラグインが正常に動作することを確認済み
 
 ## 概要と前提知識

@@ -50,7 +50,7 @@
     "test": "cross-env NODE_ENV=test mocha --opts ./mocha.opts",
     "test-cov": "cross-env NODE_ENV=test nyc mocha --opts ./mocha.opts",
     "karma": "cross-env NODE_ENV=test karma start",
-    "lint": "DEBUG=eslint:cli-engine eslint src",
+    "lint": "cross-env DEBUG=eslint:cli-engine eslint src",
     "metrics": "plato -r -d report src",
     "clean": "rimraf .nyc_output dist coverage report",
     "cleanall": "rimraf node_modules bower_components",

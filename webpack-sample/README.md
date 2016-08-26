@@ -55,8 +55,8 @@ babelプラグインでpower-assertとカバレッジ用のコード変換も行
 2. mocha実行 [設定ファイル: mocha.opts]
   * babel実行 (--compilers js:babel-core/register)
   * instrument追加 (babel-plugin-istanbul)
-3. babel実行（ビルドの2と同様）
-  * ES6変換 (babel-preset-es2015)
+3. babel実行
+  * ビルド、開発用ウェブサーバー」の内容
   * power-assert変換 (babel-preset-power-assert)
   * instrumentコード埋め込み (babel-plugin-istanbul)
 
@@ -64,7 +64,7 @@ babelプラグインでpower-assertとカバレッジ用のコード変換も行
 
 1. karma実行 [設定ファイル: karma.conf.js]
   * webpack実行 (karma-webpack)
-  * PhantomJS実行（phantomjs-prebuilt）
+  * PhantomJS実行（karma-phantomjs-launcher）
   * mocha実行 (karma-mocha)
   * カバレッッジ実行 (karma-coverage)
 

@@ -11,6 +11,7 @@ settings:
   # webpackの設定からモジュールのパスを解決する
   # bowerを使用しないならば node (eslint-import-resolver-node) で良い
   import/resolver: webpack
+  import/extensions: [".js", ".jsx"]
   import/named: 2
   import/namespace: 2
   import/default: 2

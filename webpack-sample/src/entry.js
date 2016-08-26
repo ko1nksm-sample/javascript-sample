@@ -1,20 +1,10 @@
-import hello from 'lib/hello'
-import { init } from 'lib/forms'
-import world from 'lib/world.jsx'
+import HelloJQuery from 'lib/hello-jquery'
+import HelloLodash from 'lib/hello-lodash'
+import HelloReact from 'lib/hello-react'
 
-import $ from 'jquery'
-import _ from 'lodash'
-import moment from 'moment'
+const say = element => element.textContent = 'Hello World'
 
-let disp = () => {
-  document.write(`<p>${hello()} <span id="name"></span></p>`)
-}
-disp()
-
-world()
-
-document.write(`<p>jQuery: ${$.fn.jquery}</p>`)
-document.write(`<p>lodash: ${_.VERSION}</p>`)
-document.write(`<p>momen: ${moment.version}</p>`)
-
-init()
+say(document.getElementById('hello'))
+HelloJQuery.say(document.getElementById('jquery'))
+HelloLodash.say(document.getElementById('lodash'))
+HelloReact.say(document.getElementById('react'))

@@ -10,6 +10,8 @@ module.exports = {
   },
   resolve: {
     root: path.resolve(__dirname, './src'),
+    extensions: ['', '.js', '.jsx'],
+
     // bower_componentsはbowerを使用する時のみ必要
     modulesDirectories: ['node_modules', 'bower_components']
   },
